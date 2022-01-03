@@ -1,0 +1,42 @@
+
+.Modal {
+    position: fixed;
+    bottom: 0;
+    background-color: #fff;
+    width: 30%;
+    box-shadow: 0 0 4px 0px rgb(0 0 0 / 15%);
+    right: -155vh;
+    padding: 12px 30px;
+    transition: all 0.5s ease-out;
+    z-index: 10;
+    height: 100vh;
+        
+    }
+
+.Overlay {
+    background-color: rgba(0, 0, 0, 0.55);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    display: none;
+    z-index: 5;
+}
+
+.Overlay.Show {
+    display: block;
+}
+.Modal.Show {
+    right: 0;
+}
+
+.Close {
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    font-size: 18px;
+    display: flex;
+    width: 100%;
+    margin: 30px 0;
+}

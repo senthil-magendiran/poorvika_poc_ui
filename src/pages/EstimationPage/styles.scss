@@ -1,0 +1,38 @@
+.estimation__page {
+    padding: 30px;
+
+    .estimation__page__heading {
+        font-weight: 500;
+    }
+    .breadcrum {
+        font-size: 12px;
+        margin: 0;
+    }
+
+    .estimation__page__product__details {
+        width: 80%;
+        margin: 20px 0;
+        height: 60vh;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+
+        .btn__get__exactvalue {
+            width: 200px;
+        }
+    }
+    .estimation__page__price{
+        color: #ff6565;
+    font-size: 30px;
+    font-weight: 600;
+    }
+
+    .hint-text {
+        display: flex;
+        font-size: 14px;
+        p {
+            margin-right: 2px;
+        }
+        
+    }
+}

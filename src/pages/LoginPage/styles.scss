@@ -1,0 +1,9 @@
+.loginPage{
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    .login__illustration {
+        margin: 0 auto;
+        width: 300px;
+    }
+}

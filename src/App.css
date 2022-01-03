@@ -1,0 +1,63 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+div,
+p,
+button, 
+input,
+input::placeholder {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.btn {
+  height: 40px;
+  width: 100%;
+  border: none;  
+  font-weight: 800;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 16%);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn__primary {
+  color: #FFF;
+  background: #42c8b7;
+}
+
+.shadow {
+  box-shadow: 0 0 8px 0 rgb(0 0 0 / 14%);
+}
+
+.clr__primary {
+  color: #42c8b7;
+}
+
+.halfwidth {
+  width: 50%;
+}
+
+.btn__continue {
+  width: 200px;
+}
+
+.Mui-checked {
+  color: #42c8b7 !important;
+}
+
+.login__slider {
+    z-index: 1000;
+    width: 25%;
+    position: fixed;
+    top: 0;
+    right: -25%;
+    background: #FFF;
+    height: 100vh;
+    transition: 0.5s;
+}
+
+.login__slider__view {
+  right: 0;
+}
+

@@ -1,0 +1,38 @@
+.product__selection {
+    height: 350px;
+    position: relative;
+    .product__selection__card {
+        height: 350px;
+        width: 350px;
+        border-radius: 10px;
+        background-color: #FFF;
+        position: absolute;
+        bottom: -40px;
+        left: 5vw;
+        padding: 0 20px;
+        .product__selection__options {
+            display: flex;
+            width: 100%;
+           
+            .option {
+                width: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 40px;
+            }
+            .sell__option {
+                color: #42c8b7;
+                font-weight: 600;
+                border-bottom: 3px solid;
+            }
+        }
+        .btn__sell {
+            width: 100%;
+            margin: 10px 0;
+        }
+        .selection_options {
+            margin: 10px 0;
+        }
+    }
+}
