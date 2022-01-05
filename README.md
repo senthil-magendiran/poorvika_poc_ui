@@ -5,7 +5,7 @@ Scope of work: Replicating Cashify web application for Poorvika POC.
 ## Technologies Used
 * Front End: ReactJs 
 * Back End: NodeJs with express framework 
-* Datebase: MongoDB
+* Database: MongoDB
 * UI Library: MaterialUI
 * Language: Typescript
 
