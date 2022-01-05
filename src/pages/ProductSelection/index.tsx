@@ -9,6 +9,7 @@ import appContext from "context/app.context";
 import { ProductService } from "services/product.service";
 import { IAPIResponse } from "services/interfaces/common.interface";
 import { IProduct } from "services/interfaces/product.interface";
+import { showToaster } from "utils/constants";
 
 const ProductSelectionPage: React.FC = () => {
 
@@ -29,6 +30,8 @@ const ProductSelectionPage: React.FC = () => {
 
     if (productResponse.status === "success") {
       setCategoryList(productResponse.data.category);
+    } else {
+      showToaster(productResponse.message);
     }
 
   }
@@ -39,6 +42,8 @@ const ProductSelectionPage: React.FC = () => {
 
     if (brandResponse.status === "success") {
       setBrandList(brandResponse.data.brand);
+    } else {
+      showToaster(brandResponse.message);
     }
   }
 
@@ -47,6 +52,8 @@ const ProductSelectionPage: React.FC = () => {
 
     if (productListResponse.status === "success") {
       setProductList(productListResponse.data.products);
+    }else {
+      showToaster(productListResponse.message);
     }
   }
 
@@ -121,8 +128,8 @@ const ProductSelectionPage: React.FC = () => {
           </FormControl>
           <button className="btn btn__primary btn__sell" onClick={() => initiateSellHandler()}>Sell Now</button>
         </div>
-        
-        <img className="mx-auto h-80 mobile-img" src="https://cshprod.s3.amazonaws.com/imageLibrary/find-new-phone_7f0fcc9479d9.png"/>
+
+        <img className="mx-auto h-80 mobile-img" src="https://cshprod.s3.amazonaws.com/imageLibrary/find-new-phone_7f0fcc9479d9.png" />
       </div>
 
     </div>

@@ -5,13 +5,13 @@ import { Iorder } from "services/interfaces/Order.interface";
 import { OrdersService } from "services/order.service";
 import { IAPIResponse } from "services/interfaces/common.interface";
 import './styles.scss'
+import { showToaster } from "utils/constants";
 
 const PriceSummary: React.FC = () => {
   const { setStep, selectedProduct, functionalDefects, deviceProblems, accessoryList, isAuthenticated, setViewLoginMenu } =
     useContext(appContext);
 
   const [displayModal, setDisplayModal] = useState(false);
-  const [showToaster, setToaster] = useState<string>();
   const ordersService = new OrdersService();
 
   const addOrderHandler = async () => {
@@ -36,12 +36,11 @@ const PriceSummary: React.FC = () => {
         };
 
         const orderResult: IAPIResponse = await ordersService.addOrder(newOrder);
-        setToaster('Your Order Placed Successfully')
-        setTimeout(() => {
-          setStep(6);
-        }, 2000)
-        console.log("orderResult", orderResult)
-
+        if (orderResult.status == 'success') {
+          showToaster(orderResult.message)
+        } else {
+          showToaster(orderResult.message);
+        }
 
       } catch (error) {
         console.log("Order Placement Error", error);
@@ -143,13 +142,6 @@ const PriceSummary: React.FC = () => {
         displayModal={displayModal}
         handleClose={() => setDisplayModal(!displayModal)}
       />
-      {showToaster ?
-        <div className="toaster-con">
-          {showToaster}
-        </div>
-        :
-        <></>
-      }
     </div>
   );
 };

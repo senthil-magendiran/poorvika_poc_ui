@@ -7,6 +7,7 @@ import { IAPIResponse } from "services/interfaces/common.interface";
 import { Iorder } from "services/interfaces/Order.interface";
 import { OrdersService } from "services/order.service";
 import { Pagination } from "@mui/material";
+import { showToaster } from "utils/constants";
 
 const OrdersListPage: React.FC = () => {
     const [orders, setOrderList] = useState<Iorder[] | []>([]);
@@ -22,7 +23,9 @@ const OrdersListPage: React.FC = () => {
         if (orderResponse.status === "success") {
             setOrderList(orderResponse.data.orders);
             setPage(orderResponse.data.page);
-        }
+        }else {
+            showToaster(orderResponse.message);
+          }
 
     }
 

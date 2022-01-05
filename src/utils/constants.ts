@@ -1,5 +1,7 @@
 import { AxiosError } from "axios";
 import { IAPIResponse } from "services/interfaces/common.interface";
+import * as toaster from 'toastr'
+
 
 export const BASE_URL = "http://localhost:3000";
 export const IP_URL = "https://ipapi.co/json/";
@@ -122,4 +124,10 @@ export const deviceQuestions = [
         }
       
         return { status: "failure", message: error.message, error }
+      }
+
+      export const showToaster = (message: string): void => {
+        const toasterOptions = { positionClass: 'toast-top-center' }
+        toaster.remove();
+        toaster.success(message, '', toasterOptions)
       }
