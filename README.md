@@ -1,4 +1,4 @@
-# Task Planner - NextJS
+# Task Planner - React-Js
 
 Scope of work: Replicating Cashify web application for Poorvika POC.
 
