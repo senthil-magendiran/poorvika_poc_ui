@@ -6,6 +6,8 @@ import { accessories } from "utils/constants";
 import appContext from "context/app.context";
 import EvaluationInfo from "components/EvaluationInfo";
 
+import './styles.scss'
+
 const AccessoryPage: React.FC = () => {
   const {
     setStep,
@@ -29,11 +31,11 @@ const AccessoryPage: React.FC = () => {
   };
 
   return (
-    <div className="columns-2 px-30 w-full flex">
-      <div className="shadow w-4/5 m-3 rounded px-10">
+    <div className="accessary-list-page columns-2 px-30 w-full flex">
+      <div className="accessary-wrap shadow w-4/5 m-3 rounded px-10">
         <Heading text="Do you have the following?" />
         <SubHeading text="See what this means?" />
-        <div className="defects-items columns-4">
+        <div className="defects-items">
           {accessories?.map((accessory, index) => (
             <Defect
               image={accessory.image}
@@ -52,7 +54,7 @@ const AccessoryPage: React.FC = () => {
           </button>
         </div>
       </div>
-      <div className="shadow w-2/5 m-3 rounded py-5">
+      <div className="evaluation-content shadow w-2/5 m-3 rounded py-5">
         <div>
           <div className="flex justify-center items-center border-b py-4">
             <img src={selectedProduct.image} alt="product" className="w-1/5" />

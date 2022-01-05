@@ -18,11 +18,11 @@ const EstimationPage: React.FC = () => {
                     <img src={selectedProduct.image} alt="" />
                 </div>
                 <div className="product__specs w-1/2 justify-center">
-                <h1 className='estimation__page__heading'>{selectedProduct.model}</h1>
-                <h2 className="hint-text">Get Upto</h2>
-                <h1 className='estimation__page__price'> &#8377;{selectedProduct.price}</h1>
-                <h2 className="hint-text"> <p className='clr__primary'>{selectedProduct.soldCount}+</p>already sold on Cashify</h2>
-                <button className='btn btn__primary btn__get__exactvalue my-5' onClick={() => setStep(2)}> Get Exact Value  &#8594;</button>
+                    <h1 className='estimation__page__heading margin-auto'>{selectedProduct.model}</h1>
+                    <h2 className="hint-text margin-auto">Get Upto</h2>
+                    <h1 className='estimation__page__price margin-auto'> &#8377;{selectedProduct.price}</h1>
+                    <h2 className="hint-text margin-auto"> <p className='clr__primary'>{selectedProduct.soldCount}+</p>already sold on Cashify</h2>
+                    <button className='btn btn__primary btn__get__exactvalue my-5 margin-auto' onClick={() => setStep(2)}> Get Exact Value  &#8594;</button>
                 </div>
             </div>
         </div>

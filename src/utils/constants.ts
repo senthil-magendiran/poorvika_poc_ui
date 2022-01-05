@@ -2,6 +2,7 @@ import { AxiosError } from "axios";
 import { IAPIResponse } from "services/interfaces/common.interface";
 
 export const BASE_URL = "http://localhost:3000";
+export const IP_URL = "https://ipapi.co/json/";
 
 export const deviceQuestions = [
     {

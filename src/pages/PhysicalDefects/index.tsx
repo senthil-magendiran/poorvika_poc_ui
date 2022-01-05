@@ -26,8 +26,8 @@ const PhysicalDefectsPage: React.FC = () => {
   }
 
   return (
-    <div className="columns-2 px-30 w-full flex">
-      <div className="shadow w-4/5 m-3 rounded px-10">
+    <div className="physical-defects columns-2 px-30 w-full flex">
+      <div className="physical-prob-wrap shadow w-4/5 m-3 rounded px-10">
         <Heading text="Functional or Physical Problems" />
         <SubHeading text="See what this means?" />
         <div className="defects-items columns-4">
@@ -44,7 +44,7 @@ const PhysicalDefectsPage: React.FC = () => {
           </button>
         </div>
       </div>
-      <div className="shadow w-2/5 m-3 rounded">
+      <div className="evaluation-content shadow w-2/5 m-3 rounded">
         <div>
           <div className="flex justify-center items-center border-b py-4">
             <img src={selectedProduct.image} alt="product" className="w-1/5" />

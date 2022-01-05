@@ -1,0 +1,13 @@
+@media (max-width:450px) {
+    .device-evaluation-page {
+        columns: auto;
+        display: block;
+        .question-wrap  {
+            width: auto;
+        }
+
+        .evaluation-content{
+            width: auto;
+        }
+    }
+}

@@ -1,10 +1,10 @@
-import { AxiosError } from "axios";
+import axios, { AxiosError } from "axios";
 import { parseAPIError } from "utils/constants";
 import { BaseService } from "./base.service";
 import { IAPIResponse } from "./interfaces/common.interface";
 
 export class ProductService extends BaseService {
-  
+
   public async getCategory(): Promise<IAPIResponse> {
     try {
       const { data } = await this.httpClient.get("/products/category");
@@ -31,4 +31,14 @@ export class ProductService extends BaseService {
       return parseAPIError(error as AxiosError);
     }
   }
+
+  public async getGeoInfo(): Promise<IAPIResponse> {
+    try {
+      const { data } = await this.ipClient.get('');
+      return data;
+    } catch (error) {
+      return parseAPIError(error as AxiosError);
+    }
+  }
+
 }

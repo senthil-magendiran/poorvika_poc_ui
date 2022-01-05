@@ -21,10 +21,10 @@
             width: 200px;
         }
     }
-    .estimation__page__price{
+    .estimation__page__price {
         color: #ff6565;
-    font-size: 30px;
-    font-weight: 600;
+        font-size: 30px;
+        font-weight: 600;
     }
 
     .hint-text {
@@ -33,6 +33,27 @@
         p {
             margin-right: 2px;
         }
-        
+    }
+}
+@media (max-width: 450px) {
+    .estimation__page {
+        .estimation__page__product__details {
+            margin: 10px auto;
+            display: block;
+            width: auto;
+            columns: auto;
+            .img-container {
+                width: auto;
+                display: flex;
+            }
+            .product__specs {
+                display: flex;
+                flex-direction: column;
+                width: auto;
+            }
+            .margin-auto {
+                margin: auto;
+            }
+        }
     }
 }

@@ -6,6 +6,7 @@ import Heading from "components/Heading";
 import SubHeading from "components/SubHeading";
 import appContext from "context/app.context";
 import EvaluationInfo from "components/EvaluationInfo";
+import './styles.scss'
 
 const DeviceEvaluationPage: React.FC = () => {
   const { setStep, selectedProduct, setDeviceProblems } = useContext(appContext);
@@ -24,8 +25,8 @@ const DeviceEvaluationPage: React.FC = () => {
   }
 
   return (
-    <div className="columns-2 px-30 w-full flex">
-      <div className="shadow w-4/5 m-3 rounded px-10">
+    <div className="device-evaluation-page columns-2 px-30 w-full flex">
+      <div className="question-wrap shadow w-4/5 m-3 rounded px-10">
         <Heading text="Tell us a few things about your device!" />
         <SubHeading text="See what this means?" />
         {deviceQuestions?.map((item, index) => (
@@ -45,7 +46,7 @@ const DeviceEvaluationPage: React.FC = () => {
           </button>
         </div>
       </div>
-      <div className="shadow w-2/5 m-3 rounded">
+      <div className="evaluation-content shadow w-2/5 m-3 rounded">
         <div>
           <div className="flex justify-center items-center border-b py-4">
             <img src={selectedProduct.image} alt="product" className="w-1/5" />

@@ -36,14 +36,35 @@ const OrdersListPage: React.FC = () => {
 
 
     return (
-        <div className="p-10">
+        <div className="order-list-page p-10">
             <p className="my-4 font-semibold">Orders</p>
+            <div className="mobile-view hidden">
+                {orders.length ?
+                    <>
+                        {
+                            orders.map((item: Iorder, index) => {
+                                return (
 
-            <table className="">
+                                    <div className="flex m-2 shadow p-4">
+                                        <img className="w-24" src={item.image} />
+                                        <div>
+                                            <p className="text-xl font-semibold">{item.model}</p>
+                                            <p className="font-semibold text-2xl color-red">&#8377; {item.price}</p>
+
+                                        </div>
+                                    </div>
+                                )
+                            })
+                        }
+
+                    </>
+                    : <p>No Orders</p>}
+            </div>
+            <table className="order-list-table">
                 <thead>
                     <tr>
                         <th>S.No</th>
-                        <th>Order Id</th>
+                        <th>Product</th>
                         <th>Price</th>
                         <th>Functional Defects</th>
                         <th>Accessory List</th>
@@ -58,8 +79,14 @@ const OrdersListPage: React.FC = () => {
                             return (
                                 <tr key={item.product} >
                                     <td>{index + 1}</td>
-                                    <td>{item.product}</td>
-                                    <td>{item.price}</td>
+                                    <td>
+                                        <div className="product-image">
+                                            <img src={item.image} />
+
+                                        </div>
+                                        <p className="text-lg font-semibold">{item.model}</p>
+                                    </td>
+                                    <td>&#8377;{item.price}</td>
                                     <td>
                                         {item.functionalDefects.length > 0 ?
                                             <>
@@ -124,13 +151,13 @@ const OrdersListPage: React.FC = () => {
                 )}
             </table>
             <Pagination
-                className="flex justify-end"
+                className="pagination flex justify-end m-4"
                 count={page}
                 shape="rounded"
                 variant="outlined"
                 onChange={handleChange}
             />
-        </div>
+        </div >
     );
 };
 

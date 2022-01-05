@@ -5,16 +5,16 @@ h4,
 h5,
 div,
 p,
-button, 
+button,
 input,
 input::placeholder {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .btn {
   height: 40px;
   width: 100%;
-  border: none;  
+  border: none;
   font-weight: 800;
   box-shadow: 0 1px 2px 0 rgb(0 0 0 / 16%);
   border-radius: 5px;
@@ -22,7 +22,7 @@ input::placeholder {
 }
 
 .btn__primary {
-  color: #FFF;
+  color: #fff;
   background: #42c8b7;
 }
 
@@ -47,17 +47,23 @@ input::placeholder {
 }
 
 .login__slider {
-    z-index: 1000;
-    width: 25%;
-    position: fixed;
-    top: 0;
-    right: -25%;
-    background: #FFF;
-    height: 100vh;
-    transition: 0.5s;
+  z-index: 1000;
+  width: 25%;
+  position: fixed;
+  top: 0;
+  right: -25%;
+  background: #fff;
+  height: 100vh;
+  transition: 0.5s;
 }
 
+@media (max-width: 450px) {
+ 
+  .login__slider__view {
+    right: 0;
+    width: 95%;
+  }
+}
 .login__slider__view {
   right: 0;
 }
-

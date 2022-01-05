@@ -33,5 +33,18 @@
             width: 150px;
         }
     }
-    
+}
+@media (max-width: 450px) {
+    .navbar {
+        padding: 0 10px;
+        .navbar__image {
+            width: auto;
+        }
+    }
+    .mobile-w-max {
+        width: max-content;
+    }
+    .d-none {
+        display: none;
+    }
 }

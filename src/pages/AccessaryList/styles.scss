@@ -1,0 +1,31 @@
+.accessary-list-page {
+    .accessary-wrap {
+        .defects-items {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+    }
+}
+@media (max-width: 450px) {
+    .accessary-list-page {
+        display: block;
+        columns: auto;
+        .accessary-wrap {
+            display: block;
+            columns: auto;
+            padding: 10px;
+            width: auto;
+            .defects-items {
+                columns: 2;
+                display: block;
+                .defect {
+                    width: 130px;
+                    margin: 5px;
+                }
+            }
+        }
+    }
+    .evaluation-content {
+        width: auto;
+    }
+}

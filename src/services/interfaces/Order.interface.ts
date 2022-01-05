@@ -3,6 +3,8 @@ export interface Iorder {
     name: string,
     product: string,
     price: string,
+    model: string,
+    image: string,
     deviceProblems: string[],
     functionalDefects: string[],
     accessoryList: string[],

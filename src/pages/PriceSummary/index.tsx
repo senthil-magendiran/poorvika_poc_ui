@@ -7,7 +7,7 @@ import { IAPIResponse } from "services/interfaces/common.interface";
 import './styles.scss'
 
 const PriceSummary: React.FC = () => {
-  const { setStep, selectedProduct, functionalDefects, deviceProblems, accessoryList, isAuthenticated } =
+  const { setStep, selectedProduct, functionalDefects, deviceProblems, accessoryList, isAuthenticated, setViewLoginMenu } =
     useContext(appContext);
 
   const [displayModal, setDisplayModal] = useState(false);
@@ -21,7 +21,9 @@ const PriceSummary: React.FC = () => {
           mobileNumber: "9876543210",
           name: "Senthil Kumar M",
           product: selectedProduct._id,
-          price: selectedProduct.price,
+          price: Number(selectedProduct.price) >= 10000 ? selectedProduct.price : (Number(selectedProduct.price) + 100).toString(),
+          image: selectedProduct.image,
+          model: selectedProduct.model,
           deviceProblems: deviceProblems
             ? deviceProblems.filter((item) => item?.length)
             : [],
@@ -34,7 +36,10 @@ const PriceSummary: React.FC = () => {
         };
 
         const orderResult: IAPIResponse = await ordersService.addOrder(newOrder);
-        setStep(0);
+        setToaster('Your Order Placed Successfully')
+        setTimeout(() => {
+          setStep(6);
+        }, 2000)
         console.log("orderResult", orderResult)
 
 
@@ -42,24 +47,21 @@ const PriceSummary: React.FC = () => {
         console.log("Order Placement Error", error);
       }
     } else {
-      setToaster("Login into your Account to place the Order")
-      setTimeout(() => {
-        setToaster('')
-      }, 5000)
+      setViewLoginMenu(true)
     }
 
   };
 
   return (
     <div>
-      <div className="columns-2 px-30 w-full flex">
-        <div className="shadow w-4/5 m-3 rounded px-10">
-          <div className="flex py-12">
+      <div className="price-summary-page columns-2 px-30 w-full flex">
+        <div className="price-summary-wrap shadow w-4/5 m-3 rounded px-10">
+          <div className="price-content flex py-12">
             <div className="img-container w-1/4 justify-center">
               <img src={selectedProduct.image} alt="" />
             </div>
-            <div className="w-1/2 justify-center">
-              <h1 className="font-semibold text-3xl">
+            <div className="w-1/2 justify-center product-price-details">
+              <h1 className="font-semibold text-3xl product-name">
                 {selectedProduct.model}{" "}
               </h1>
               <h2 className="font-medium">Selling price :</h2>
@@ -93,7 +95,7 @@ const PriceSummary: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="shadow w-2/5 m-3 rounded p-4">
+        <div className="evaluation-content shadow w-2/5 m-3 rounded p-4">
           <h2 className="font-medium text-xl">Price Summary</h2>
           <div className="flex justify-between  border-dotted border-t-2 py-4 text-sm font-medium">
             <p>Base Price</p>
@@ -101,10 +103,16 @@ const PriceSummary: React.FC = () => {
           </div>
           <div className="flex justify-between  border-dotted border-t-2 py-4 text-sm font-medium">
             <p>Pickup Charges</p>
-            <p>
-              <span className="text-emerald-300">Free</span>{" "}
-              <del> &#8377;100</del>
-            </p>
+            {Number(selectedProduct.price) >= 10000 ?
+              <p>
+                <span className="text-emerald-300">Free</span>{" "}
+                <del> &#8377;100</del>
+              </p>
+              :
+              <p>
+                <span> &#8377;100</span>
+              </p>
+            }
           </div>
           <div className="flex justify-between  border-dotted border-t-2 py-4 text-sm font-medium">
             <p>Add Promo code</p>
@@ -112,7 +120,16 @@ const PriceSummary: React.FC = () => {
           </div>
           <div className="flex justify-between  border-dotted border-t-2 py-4 text-sm font-medium">
             <p>Total Amount</p>
-            <p> &#8377;{selectedProduct.price}</p>
+            {Number(selectedProduct.price) >= 10000 ?
+              <p>
+                <p> &#8377;{selectedProduct.price}</p>
+              </p>
+              :
+              <p>
+                <p> &#8377;{Number(selectedProduct.price) + 100}</p>
+              </p>
+            }
+
           </div>
           <button
             className="btn btn__primary w-full py-2ssss"
